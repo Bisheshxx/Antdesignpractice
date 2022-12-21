@@ -5,7 +5,12 @@ const test = () => {
   return (
     <Space
       wrap
-      style={{ marginTop: "10px", display: "flex", justifyContent: "center" }}
+      style={{
+        paddingTop: "10px",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
     >
       <Button type="primary">Primary Button</Button>
       <Button>Default Button</Button>

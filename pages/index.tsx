@@ -1,3 +1,26 @@
+import { useEffect, useState } from "react";
+import { notification } from "antd";
+import { SmileOutlined } from "@ant-design/icons";
+import CarouselComponent from "../common/CarouselComponent";
+
 export default function Home() {
-  return <h1 style={{ color: "black" }}>this is test</h1>;
+  const openNotification = () => {
+    notification.open({
+      message: "Welcome",
+      description: "Welcome to the Website",
+      onClick: () => {
+        console.log("Notification Clicked!");
+      },
+      icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+    });
+  };
+  const [date, setDate] = useState(1);
+  useEffect(() => {
+    openNotification();
+  }, [Date]);
+  return (
+    <>
+      <CarouselComponent />
+    </>
+  );
 }

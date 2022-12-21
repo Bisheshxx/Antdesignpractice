@@ -16,9 +16,7 @@ export const BodyComponent = () => {
       <div
         className="site-layout-content"
         style={{ background: colorBgContainer }}
-      >
-        Content
-      </div>
+      ></div>
     </Content>
   );
 };

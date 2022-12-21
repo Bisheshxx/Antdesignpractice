@@ -1,15 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Layout } from "antd";
-import { HeaderComponent } from "../Components/Header/HeaderComponent";
-import { FooterComponent } from "../Components/Footer/FooterComponent";
+import { LayoutComponent } from "../Components/Layout/LayoutComponent";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout className="layout">
-      <HeaderComponent />
+    <LayoutComponent>
       <Component {...pageProps} />
-      <FooterComponent />
-    </Layout>
+    </LayoutComponent>
   );
 }
