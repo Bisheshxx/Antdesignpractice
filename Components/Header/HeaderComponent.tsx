@@ -1,31 +1,49 @@
 import React from "react";
 import { Layout, Menu } from "antd";
 import Link from "next/link";
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar, Badge } from "antd";
+import SearchBar from "../../common/SearchBar";
+import { Col, Row } from "antd";
 const { Header } = Layout;
 
 export const HeaderComponent = () => {
-  const NavHeaders = [
-    {
-      key: "Home",
-      label: <Link href="/">Home</Link>,
-    },
-    {
-      key: "Components",
-      label: "Components",
-      children: [
-        { key: "Something", label: <Link href="/test">Components</Link> },
-        { key: "Something", label: <Link href="/test">Components</Link> },
-      ],
-    },
-    {
-      key: "About Us",
-      label: "About Us",
-    },
-  ];
+  const Menustyle = {
+    width: "100%",
+  };
+  const { SubMenu } = Menu;
+
   return (
     <Header>
-      <div className="logo" />
-      <Menu theme="dark" mode="horizontal" items={NavHeaders} />
+      <Menu theme="dark" mode="horizontal">
+        <div style={Menustyle}>
+          <Row>
+            <Col span={8}>Logo</Col>
+            <Col span={8}>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <Menu.Item key="home">
+                  <Link href="/">Home</Link>
+                </Menu.Item>
+                <SubMenu key="Components" title={"Components"}>
+                  <Menu.Item key="Components">
+                    <Link href="/">Components</Link>
+                  </Menu.Item>
+                </SubMenu>
+              </div>
+            </Col>
+            <Col span={8}>
+              <div style={{ display: "flex", justifyContent: "right" }}>
+                {/* <SearchBar /> */}
+                <span className="avatar-item">
+                  <Badge count={3}>
+                    <Avatar shape="square" icon={<UserOutlined />} />
+                  </Badge>
+                </span>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </Menu>
     </Header>
   );
 };

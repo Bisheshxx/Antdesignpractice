@@ -1,8 +1,12 @@
 import React from "react";
 import { Layout, Breadcrumb, theme } from "antd";
+import { useRouter } from "next/router";
 const { Content } = Layout;
 
 export const BodyComponent = () => {
+  const router = useRouter();
+  console.log(router.asPath);
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();

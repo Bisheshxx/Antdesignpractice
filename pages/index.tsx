@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { notification } from "antd";
 import { SmileOutlined } from "@ant-design/icons";
 import CarouselComponent from "../common/CarouselComponent";
+import Products from "../Components/Products";
 
 export default function Home() {
   const openNotification = () => {
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <>
       <CarouselComponent />
+      <Products />
     </>
   );
 }
