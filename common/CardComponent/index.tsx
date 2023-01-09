@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "antd";
+import Image from "next/image";
 
 const { Meta } = Card;
 
@@ -16,9 +17,12 @@ const CardComponent = (props: IProps) => {
       hoverable
       style={{ width: 240 }}
       cover={
-        <img
+        <Image
+          loader={() => props.img as string}
+          height={240}
+          width={240}
           alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          src={props.img as string}
         />
       }
     >
